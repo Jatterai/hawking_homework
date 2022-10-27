@@ -101,42 +101,54 @@ form {
 	padding-top: 20px;
 	font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
 		sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 
 .post {
-	box-shadow: -3px 3px 5px rgba(0, 0, 0, 0.219);
+	flex: 0 1 40%;
+	box-shadow: 0px 0px 5px rgba(85, 85, 85, 0.219);
 	padding: 1em;
 	border-radius: 10px;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 
 .post p:nth-child(1) {
 	width: 100%;
 	display: flex;
-	justify-content: start;
+	justify-content: space-between;
 	align-items: center;
+	margin-bottom: 0px;
 }
 .post p:nth-child(1) span:first-child {
 	font-weight: 700;
 	font-size: 120%;
 	margin-right: 0.5em;
+	color: rgb(48, 48, 97);
 }
 .post p:nth-child(1) span:last-child {
 	color: gray;
 }
 
 .post p:nth-child(2) {
-	font-weight: 700;
 	text-transform: capitalize;
-	color: rgb(48, 48, 97);
+	color: grey;
+	margin: 0;
+	margin-bottom: 1em;
 }
 
-.console {
-	font-size: 70px;
+.post .inf {
+	margin: 0;
+	margin-bottom: 0.4em;
+}
+
+.post .inf span {
 	font-weight: 700;
-	font-family: arial;
-	background-color: crimson;
-	color: white;
-	padding: 0.7em;
-	text-shadow: -2px 2px 0px rgb(232, 66, 132), -4px 4px 10px rgb(163, 8, 8);
+	color: #444;
+}
+
+.post .inf {
+}
+.console {
 }

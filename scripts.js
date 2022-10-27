@@ -33,27 +33,26 @@ loadBtn.addEventListener("click", function (e) {
 
 //------------------------ posts -------------------//
 function showPosts() {
-	const random_post = () => rand(0, 100);
-	axios.get('https://jsonplaceholder.typicode.com/posts')
-		.then((res) => {
+	const random_post = () => rand(0, 10);
+	axios.get('https://jsonplaceholder.typicode.com/users')
+		.then(({ data }) => {
 
-			const posts = [];
-
-			for (let i = 0; i < 6; i++) {
-				posts.push(res.data[random_post()]);
-			}
+			console.log(data);
 
 			const container = document.createElement('div');
 			container.className = 'posts-container';
 
-			for (let post of posts) {
+			for (let post of data) {
+				console.log(post);
 				const item = document.createElement('div');
 				item.className = 'post';
 
 				item.innerHTML =
-					`<p><span>${post.id}</span><span>@${post.userId}</span></p>
-				<p>${post.title}</p>
-				<p>${post.body}</p>`
+					`<p><span>${post.name}</span><span>@${post.username}   (id${post.id})</span></p>
+				<p>${post.email}</p>
+				<p class='address inf'><span>Adress:</span> ${post.address.city}, ${post.address.street} Street, ${post.address.suite}</p>
+				<p class='phone inf'><span>Phone: </span> ${post.phone}</p>
+				<p class='web inf'><span>Website: </span> ${post.phone}</p>`
 
 				container.append(item)
 			}
